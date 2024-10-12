@@ -1,0 +1,130 @@
+
+.text-xs {
+  font-size: 12px;
+}
+
+.main-text{
+  color: #242424;
+}
+
+.placeholder-text {
+  color: #343434;
+}
+
+
+.select-container {
+  position: relative;
+  width: 100%;
+
+  .select-input{
+    display: flex;
+    width: 100%;
+    min-height: 54px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 18px;
+    border: 2px solid #242424;
+    background: #ffffff;
+    padding: 0 16px;
+    cursor: pointer;
+
+    &.open {
+      border-color: #7994ef;
+      outline-color: #cfd8f8;
+    }
+
+    .arrow {
+      width: 16px;
+      height: 16px;
+      transition: all 300ms ease-in-out;
+
+      &.close {
+        transform: rotate(0);
+      }
+
+      &.open{
+        transform: rotate(180deg);
+      }
+    }
+
+    .selected-input-items-container{
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      
+      .temp-input{
+        height: 34px;
+        width: 56px;
+        background: #ffffff;
+        border: none;
+        outline: none;
+        color: #242424;
+        margin-left: 8px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+      }
+
+      .selected-input-items{
+        background: #cfd8f8;
+        padding: 8px 12px;
+        border-radius: 16px;
+        margin: 4px 8px;
+
+        &:first-child{
+          margin-left: 0;
+        }
+      }
+    }
+
+  }
+
+  .options-container {
+    scrollbar-width: none;
+    position: absolute;
+    z-index: 50;
+    width: 100%;
+    transform: translateY(10px);
+    border-radius: 18px;
+    background: #ffffff;
+    transition: all 300ms ease-in-out ;
+
+    &.close{
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    &.open {
+      max-height: 300px;
+      overflow: auto;
+    }
+
+    .options-box{
+      border-radius: 18px;
+      border: 1px solid #242424;
+      padding: 16px 12px;
+
+      .option {
+        padding: 12px 16px;
+        text-align: left;
+        border-radius: 18px;
+        margin-bottom: 8px;
+        cursor: pointer;
+
+        &.temp-select {
+          background: #dee0fd;
+          color: #6877c5;
+        }
+
+        &.selected {
+          background: #f4f5ff;
+          color: #7482c7;
+        }
+
+        &:hover{
+          background: #dee0fd;
+          color: #6877c5;
+        }
+      }
+    }
+  }
+}
